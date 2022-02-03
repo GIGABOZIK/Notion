@@ -1,25 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Заголовок страницы</title>
+
+
 <style>
-  .bordered {
-    border: 1px solid black;
+  .bordered1 {
+    border: 1px dashed red;
   }
+  .bordered2 {
+    border: 1px dashed green;
+  }
+  .bordered3 {
+    border: 1px dashed black;
+  }
+
+body {
+margin:0;
+}
   
   .wrapper {
+width: 100%;
+display: flex;
   }
   
   .centered {
     margin-left: auto;
     margin-right: auto;
+display: flex;
   }
   .inline {
-    display: inline-block;
+    margin: auto;
   }
 </style>
 
+</head>
+  <body>
+
 <footer>
-  <div class="wrapper bordered">
-    <div class="centered bordered">
-      <embed class="inline bordered" src="https://gigabozik.github.io/Notion/FeedbackSocials" width="200" height="100"></embed>
-      <embed class="inline bordered" src="https://gigabozik.github.io/Notion/BuyMeACoffee" width="300" height="100"></embed>
+  <div class="wrapper bordered1">
+    <div class="centered bordered2">
+      <embed class="inline bordered3" src="https://gigabozik.github.io/Notion/FeedbackSocials" width="170" height="80"></embed>
+      <embed class="inline bordered3" src="https://gigabozik.github.io/Notion/BuyMeACoffee" width="300" height="80"></embed>
     </div>
   </div>
 </footer>
+
+  </body>
+</html>
