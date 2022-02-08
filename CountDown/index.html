@@ -1,315 +1,181 @@
-<div class="container">
-	<div class="balloon white">
-		<div class="star-red"></div>
-		<div class="face">
-			<div class="eye"></div>
-			<div class="mouth happy"></div>
-		</div>
-		<div class="triangle"></div>
-		<div class="string"></div>
-	</div>
+<body style="position: relative;">
 
-	<div class="balloon red">
-		<div class="star"></div>
-		<div class="face">
-			<div class="eye"></div>
-			<div class="mouth happy"></div>
-		</div>
-		<div class="triangle"></div>
-		<div class="string"></div>
-	</div>
+	<style>
+		.typed-cursor {
+			display: none;
+		}
 
-	<div class="balloon blue">
-		<div class="star"></div>
-		<div class="face">
-			<div class="eye"></div>
-			<div class="mouth happy"></div>
-		</div>
-		<div class="triangle"></div>
-		<div class="string"></div>
-	</div>
-	<div id="timer"></div>
-	<h1>4th of july counter</h1>
-</div>
+		body,
+		.content {
+			background: none transparent !important;
+			overflow: hidden !important;
+		}
 
-<!---->
+		canvas {
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+		@font-face {
+			font-family: Montserrat;
+			src: url(/upload/iblock/3ac/3ac700bcabde672de6d762fbfcebbc3d.ttf) format("truetype");
+		}
 
-$font: 'Lato', sans-serif;
-$big: 'Montserrat', sans-serif;
+		.font {
+			font-family: 'Montserrat', sans-serif;
+		}
 
-$red: #EF2F3C;
-$white: #F6F4F3;
-$blue: #276FBF;
-$dark: #183059;
-$yellow: #F0A202;
+		@font-face {
+			font-family: Concert One;
+			src: url(/upload/iblock/6a7/6a715ed30bba62ddd891dca7ce39455e.ttf) format("truetype");
+		}
 
-$star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+		.font2 {
+			font-family: 'Concert One', sans-serif;
+		}
 
-html {
-display: grid;
-min-height: 100%;
+		@font-face {
+			font-family: Montserrat;
+			src: url(/upload/iblock/3ac/3ac700bcabde672de6d762fbfcebbc3d.ttf) format("truetype");
+		}
+
+		.font3 {
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.css1 {
+			text-shadow:
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000,
+				1px 1px 10px #141414;
+		}
+
+		.size {
+			font-size: 6rem
+		}
+
+		.size2 {
+			font-size: 20rem
+		}
+
+		.size3 {
+			font-size: 5rem
+		}
+
+		.color1 {
+			color: #0F7B6C
+		}
+
+		.color2 {
+			color: #D5977C
+		}
+
+		.color3 {
+			color: #0F7B6C
+		}
+
+		.overlayframe {
+			width: 276px;
+		}
+	</style>
+
+							<div class="ms-slide-bgcont" style="height: 100%; opacity: 1;">
+								<div class="ms-slide-layers" style="left: 0px; max-width: 1920px;">
+									<div class="ms-anim-layers" style="">
+										<h1 id="text1"
+											class="ms-layer font title-xlarge size color1 shadow center  css1 ms-hover-active"
+											style="top: 322.875px; left: 138px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 16.0625px; line-height: 16.0625px;">
+											До начала сессии осталось:
+										</h1>
+										<h1 id="daysTicker"
+											class="ms-layer font2 title-xlarge size2 color2 shadow center  css1 ms-hover-active"
+											style="top: 349.385px; left: 112.74px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 53.5417px; line-height: 53.5417px;">
+											112</h1>
+										<h1 id="hoursTicker"
+											class="ms-layer font2 title-xlarge size2 color2 shadow center  css1 ms-hover-active"
+											style="top: 349.385px; left: 198.198px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 53.5417px; line-height: 53.5417px;">
+											12</h1>
+										<h1 id="minsTicker"
+											class="ms-layer font2 title-xlarge size2 color2 shadow center  css1 ms-hover-active"
+											style="top: 349.385px; left: 264.302px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 53.5417px; line-height: 53.5417px;">
+											38</h1>
+										<h1 id="secsTicker"
+											class="ms-layer font2 title-xlarge size2 color2 shadow center  css1 ms-hover-active"
+											style="top: 349.385px; left: 339.76px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 53.5417px; line-height: 53.5417px;">
+											06</h1>
+										<h1 class="ms-layer font3 title-xlarge size3 color3 shadow center  css1 ms-hover-active"
+											style="top: 409.542px; left: 128.24px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 13.3854px; line-height: 13.3854px;">
+											Дней
+										</h1>
+										<h1 class="ms-layer font3 title-xlarge size3 color3 shadow center  css1 ms-hover-active"
+											style="top: 409.542px; left: 201.198px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 13.3854px; line-height: 13.3854px;">
+											Часов
+										</h1>
+										<h1 class="ms-layer font3 title-xlarge size3 color3 shadow center  css1 ms-hover-active"
+											style="top: 409.542px; left: 268.802px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 13.3854px; line-height: 13.3854px;">
+											Минут
+										</h1>
+										<h1 class="ms-layer font3 title-xlarge size3 color3 shadow center  css1 ms-hover-active"
+											style="top: 409.542px; left: 340.76px; margin: 0px 0px 5.35417px; padding: 0px; font-size: 13.3854px; line-height: 13.3854px;">
+											Секунд
+										</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div><!-- end of masterslider1 -->
+
+		<script type="text/javascript">
+
+var countDownDate = new Date('Jun 1, 2022 12:00:00').getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+// Get todays date and time
+var now = new Date().getTime();
+
+// Find the distance between now an the count down date
+var distance = countDownDate - now;
+
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+var days = (days.toLocaleString(undefined,{minimumIntegerDigits: 2}));  
+var hours = (hours.toLocaleString(undefined,{minimumIntegerDigits: 2}));  
+var minutes = (minutes.toLocaleString(undefined,{minimumIntegerDigits: 2}));
+var seconds = (seconds.toLocaleString(undefined,{minimumIntegerDigits: 2}));
+
+// Display the result in the element with id="demo"
+document.getElementById("daysTicker").innerHTML = days;
+document.getElementById("hoursTicker").innerHTML = hours;
+document.getElementById("minsTicker").innerHTML = minutes;
+document.getElementById("secsTicker").innerHTML = seconds;
+
+// If the count down is finished, write some text 
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("daysTicker").innerHTML = "00";
+document.getElementById("hoursTicker").innerHTML = "00";
+document.getElementById("minsTicker").innerHTML = "00";
+document.getElementById("secsTicker").innerHTML = "00";
 }
-
-body {
-display: grid;
-//background: $dark;
-}
-
-.container {
-position: relative;
-margin: auto;
-overflow: hidden;
-width: 650px;
-height: 480px;
-}
-
-h1 {
-font-family: $font;
-text-align: center;
-margin-top: 2em;
-font-size: 1em;
-text-transform: uppercase;
-letter-spacing: 5px;
-color: $white;
-}
-
-#timer {
-color: $white;
-text-align: center;
-text-transform: uppercase;
-font-family: $font;
-font-size: .7em;
-letter-spacing: 5px;
-margin-top: 25%;
-}
-
-.days, .hours, .minutes, .seconds {
-display: inline-block;
-padding: 20px;
-width: 100px;
-border-radius: 5px;
-}
-
-.days {
-background: $red;
-}
-
-.hours {
-background: $white;
-color: $dark;
-}
-
-.minutes {
-background: $blue;
-}
-
-.seconds {
-background: $yellow;
-.numbers {
-
-}
-}
-
-.numbers {
-font-family: $big;
-color: $dark;
-font-size: 4em;
-}
-
-.white {
-position: absolute;
-background: $white;
-height: 85px;
-width: 75px;
-left: 30%;
-top: 2%;
-.triangle {
-border-bottom: 14px solid $white;
-}
-.string {
-background: $white;
-border: 1px solid $white;
-}
-}
-
-.red {
-position: absolute;
-background: $red;
-left: 18%;
-top: 9%;
-height: 65px;
-width: 70px;
-.triangle {
-border-bottom: 14px solid $red;
-}
-.string {
-background: $red;
-border: 1px solid $red;
-}
-}
-
-.blue {
-position: absolute;
-background: $blue;
-height: 80px;
-width: 80px;
-left: 60%;
-top: 5%;
-.triangle {
-border-bottom: 14px solid $blue;
-}
-.string {
-background: $blue;
-border: 1px solid $blue;
-}
-}
-
-.balloon {
-border: 1px solid #000;
-border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
-z-index: 2;
-}
-
-.eye {
-position: absolute;
-width: 7px;
-height: 7px;
-top: 40%;
-left: 22%;
-background: #000;
-border-radius: 50%;
-&:after {
-content: '';
-left: 35px;
-width: 7px;
-height: 7px;
-border-radius: 50%;
-background: #000;
-position: absolute;
-}
-}
-
-.mouth {
-position:absolute;
-top: 45%;
-left: 43%;
-width: 7px;
-height: 7px;
-border-radius: 50%;
-}
-
-.happy {
-border: 2px solid;
-border-color: transparent #000 #000 transparent;
-transform: rotate(45deg);
-}
-
-.triangle {
-position: absolute;
-left: 40%;
-bottom: -10%;
-width: 0;
-height: 0;
-border-left: 7px solid transparent;
-border-right: 7px solid transparent;
-}
-
-.string {
-position: absolute;
-height: 70px;
-width: 1px;
-left: 48%;
-top: 100%;
-z-index: -1;
-}
-
-.star {
-width: 20px;
-height: 20px;
-background: $white;
--webkit-clip-path: $star;
-clip-path: $star;
-}
-
-.star-red {
-width: 30px;
-height: 30px;
-margin-left: 51px;
-margin-top: -5px;
-background: $red;
--webkit-clip-path: $star;
-clip-path: $star;
-}
-
-footer {
-position: fixed;
-bottom: 0;
-right: 0;
-text-transform: uppercase;
-padding: 10px;
-font-family: $font;
-font-size: 0.7em;
-p {
-letter-spacing: 3px;
-color: $red;
-}
-a {
-color: $white;
-text-decoration: none;
-&:hover {
-color: $blue;
-}
-}
-}
-</style>
-
-<!---->
-
-<script>
-const year = new Date().getFullYear();
-const fourthOfJuly = new Date(year, 6,4).getTime();
-const fourthOfJulyNextYear = new Date(year + 1, 6, 4).getTime();
-const month = new Date().getMonth();
-
-// countdown
-let timer = setInterval(function() {
-
-// get today's date
-const today = new Date().getTime();
-
-// get the difference
-let diff;
-if(month > 6) {
-diff = fourthOfJulyNextYear - today;
-} else {
-diff = fourthOfJuly - today;
-}
-
-
-
-
-// math
-let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-// display
-document.getElementById("timer").innerHTML =
-"<div class=\"days\"> \
-	<div class=\"numbers\">" + days + "</div>days</div> \
-<div class=\"hours\"> \
-	<div class=\"numbers\">" + hours + "</div>hours</div> \
-<div class=\"minutes\"> \
-	<div class=\"numbers\">" + minutes + "</div>minutes</div> \
-<div class=\"seconds\"> \
-	<div class=\"numbers\">" + seconds + "</div>seconds</div> \
-</div>";
 
 }, 1000);
-</script>
 
-<!---->
+		</script>
+
+</body>
