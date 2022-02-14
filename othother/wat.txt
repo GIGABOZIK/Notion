@@ -46,3 +46,38 @@ module(
     endcase
 
 endmodule
+
+______
+
+.ucf скачать
+
+module TOP(
+  input [7:0] SW,
+  output [7:0] LED
+);
+
+LR1_BEH CL1(
+  .X(SW[3:0),
+  .Y(LED[3:0])
+);
+LR_DNF CL2(
+  .X(SW[7:4]),
+  .Y(LED[7:4)
+);
+
+endmodule
+
+после этого в окне иерархии будут файлы
+TOP
+  |-CL1 LR1_BEH.v
+  |-CL2 LR1_DNF.v
+
+
+
+/
+/
+/
+/
+/
+/
+/
