@@ -15,3 +15,26 @@ ASSIGN_OP ->
 
 lang -> expr+
 expr -> VAR ASSIGN_OP expr_value
+expr_value -> VAR|DIGIT (OP VAR|DIGIT)*
+///   value -> VAR|DIGIT
+///   expr_value -> value(OP value)*
+
+
+class Parser
+передаем объекту класса Parser список токенов // сделать через LinkedList мб
+
+*e_1* Обработка примерно такая - *что-то* найдено, хотя ожидалось *нечто другое*
+
+void lang() {
+	while(true) {
+		expr
+	}
+}
+void expr() {
+	VAR() (void)
+	ASSIGN_OP() (void)
+	expr_value() (void)
+}
+в каждом методе^ делаем match . проверяем, совпадает ли (if current_token equals List[i] ...)
++ кидать exception *e_1* в случае ошибки
+если ок, то выходим наверх и продолжаем следующий метод
